@@ -1,5 +1,6 @@
 package com.spring.controller;
 
+import java.lang.ProcessBuilder.Redirect;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -8,9 +9,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import lombok.extern.log4j.Log4j2;
 
@@ -66,5 +69,16 @@ public class HomeController {
 		mav.addObject("test","ModelAndView"); // == request.setAttribute();
 		mav.setViewName("result");
 		return mav;
+	}
+	
+	@GetMapping("/doB")
+	public String doB(RedirectAttributes rttr) {
+		log.info("doB 요청");
+		
+		//값을 유지시키고 싶다면?
+		rttr.addAttribute("age1",20); // http://localhost:8081/?age=10 -> 주소줄에 따라 보냄 path += "bno=3&page=1"
+		rttr.addFlashAttribute("age",10); // http://localhost:8081 => session객체 잠깐 쓰고 버림
+		
+		return "redirect:/";
 	}
 }

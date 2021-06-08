@@ -10,6 +10,8 @@ import lombok.extern.log4j.Log4j2;
 @RequestMapping("/sample/*")
 public class SampleController {
 	
+	
+	//등록해야할 url 등록
 	@RequestMapping("/basic")
 	public void basic(){
 	log.info("basic 요청....");
