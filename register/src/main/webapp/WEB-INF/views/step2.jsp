@@ -63,7 +63,7 @@ pageEncoding="UTF-8"%>
           </div>
         </div>
         <div class="form-group row justify-content-center">
-          <label for="username" class="col-sm-2 col-form-label">이름 </label>
+          <label for="name" class="col-sm-2 col-form-label">이름 </label>
           <div class="col-sm-6">
             <input
               type="text"
@@ -119,19 +119,16 @@ pageEncoding="UTF-8"%>
         </div>
       </form>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
-    $(function(){
-    	//gender 값 가져온 후 '남' 이면 input radio 부분에 남이 체크 되도록 / 여이면 '여'가 체크
-    	let gender = '${member.gender}';
-    	if(gender == '남'){
-    		$("#gender").prop("checked", true);
-    	}else{
-    		$(":radio[name='gender'][values='여']").prop("checked", true);
-    	}
-
-    	})
-    })
+       $(function(){
+          //gender 값 가져온 후 남 이면 radio 부분에 남이 체크되도록 /여이면 여가 체크
+          let gender ='${member.gender}';
+          if(gender=='남'){
+             $("#gender").prop("checked", true); 
+          }else{
+             $(":radio[name='gender'][value='여']").prop("checked", true); 
+          }
+       })
     </script>
   </body>
 </html>

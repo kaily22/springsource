@@ -2,13 +2,28 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.spring.mapper.MemberMapper">
 
-<insert id="insert">
-insert into memberTBL(userid, password, name, gender, email) 
-values (#{userid},#{password},#{name},#{gender},#{email})
-</insert>
+	<insert id="insert">
+		insert into memberTBL(userid, password, name, gender, email)
+		values (#{userid},#{password},#{name},#{gender},#{email})
+	</insert>
 
-<select id="dupId" resultType="com.spring.domain.MemberVO">
-select * from membertbl where userid=#{userid}
-</select>
+	<select id="dupId" resultType="com.spring.domain.MemberVO">
+		select * from membertbl where userid=#{userid}
+	</select>
 
+	<!-- 로그인 : login(userid, name) -->
+	<select id="login" resultType="com.spring.domain.LoginVO">
+		select userid, name from membertbl where userid=#{userid} and
+		password=#{password}
+	</select>
+
+	<!-- 탈퇴 -->
+	<delete id="leave">
+		delete from membertbl where userid=#{userid} and password=#{password}
+	</delete>
+	
+	<!-- 비밀번호 변경 -->
+	<update id="modify">
+	update membertbl set password=#{new_password} where userid=#{userid} and password=#{current_password}
+	</update>
 </mapper>

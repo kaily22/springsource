@@ -28,5 +28,14 @@
   <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
   <p class="mt-5 mb-3 text-muted text-center">&copy; 2019</p>
 </form>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+$(function(){
+	let error='${error}';
+	if(error){ //if(error!='')
+		alert(error);
+	}
+})
+</script>
 </body>
 </html>

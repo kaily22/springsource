@@ -12,16 +12,16 @@ $(function() {
     rules: {
       userid: {
         required: true,
-        validId: true
-        /*remote:{
-					url:"/checkId.do",
-					type:"post",
-					data:{
-						userid:function(){
-							return $('#userid').val();
-						}
-					}
-				}		*/
+        validId: true,
+        remote:{
+               url:"/checkId",
+               type:"post",
+               data:{
+                  userid:function(){
+                     return $('#userid').val();
+                  }
+               }
+            }
       },
       password: {
         required: true,
@@ -46,7 +46,7 @@ $(function() {
     },
     messages: {
       userid: {
-        //remote: "아이디가 중복되었습니다.",
+        remote: "아이디가 중복되었습니다.",
         required: "아이디는 필수 입력 요소입니다."
       },
       password: {
