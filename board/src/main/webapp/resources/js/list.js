@@ -53,4 +53,31 @@ $(function(){
        actionForm.submit();
 
 	})
+	
+	//검색
+	//type or keyoword가 값이 없는 경우 경고 메세지를 주기
+	//둘다 값이 있다면 submit 하기
+	$(".btn-default").click(function(){
+		//검색 폼 가져오기
+		var searchForm = $("#searchForm");
+		//type 가져오기
+		var type = $("select[name='type']").val();
+		//keyword 가져오기
+		var keyword = $("input[name='keyword']").val();
+		
+		if(type == ''){
+			alert("검색 기준을 확인하세요");
+			$("select[name='type']").focus();
+			return false;
+		}else if(keyword==''){
+			alert("검색어를 확인하세요");
+			$("input[name='keyword']").focus();
+			return false;
+		}
+		
+		//검색 처음에는 1page 보여주기
+		searchForm.find("input[name='pageNum']").val("1");
+		
+		searchForm.submit();
+	})	
 })

@@ -38,5 +38,13 @@ select *
 from(select /*+INDEX_DESC(spring_board pk_spring_board)*/
             rownum rn,bno,title,writer 
       from spring_board
-      where rownum<=20)
+      where rownum<= (1*20) and (title like '%자바%'))
 where rn > 10;
+
+--TCW 선택, 검색어 자바
+select *
+from(select /*+INDEX_DESC(spring_board pk_spring_board)*/
+            rownum rn,bno,title,writer 
+      from spring_board
+      where rownum<= (1*20) and (title like '%자바%' or content like '%자바%'))
+where rn > ((1-1)*20);

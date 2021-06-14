@@ -77,19 +77,23 @@ public class BoardController {
 		service.update(vo);
 		rttr.addFlashAttribute("result", "성공");
 		
-		
+		rttr.addAttribute("type", cri.getType());
+		rttr.addAttribute("keyword", cri.getKeyword());
 		rttr.addAttribute("pageNum", cri.getPageNum());
 		rttr.addAttribute("amount", cri.getAmount());
 		
 		return "redirect:list";
 	}
 
+	//게시글 삭제
 	@PostMapping("/remove")
 	public String remove(int bno, Criteria cri, RedirectAttributes rttr) {
 		log.info("게시글 삭제하기 " + bno);
 		service.delete(bno);
 		rttr.addFlashAttribute("result", "성공");
 		
+		rttr.addAttribute("type", cri.getType());
+		rttr.addAttribute("keyword", cri.getKeyword());
 		rttr.addAttribute("pageNum", cri.getPageNum());
 		rttr.addAttribute("amount", cri.getAmount());
 		

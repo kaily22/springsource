@@ -18,7 +18,8 @@
 
 	<!-- 수정 : title, content, updatedate, bno가 일치 시(update) -->
 	<update id="update">
-		update spring_board set title=#{title}, content=#{content}, updatedate =
+		update spring_board set title=#{title},
+		content=#{content}, updatedate =
 		sysdate where bno=#{bno}
 	</update>
 
@@ -33,17 +34,50 @@
  from(select /*+INDEX_DESC(spring_board pk_spring_board)*/
             rownum rn,bno,title,writer,regdate,updatedate
       from spring_board
-      where rownum<= (#{pageNum}*#{amount}))
- where rn > ((#{pageNum}-1)*#{amount})
+      where 
+    ]]>
+    <include refid="criteria"></include>
+    <![CDATA[      
+      rownum <= (#{pageNum}*#{amount}))
+    where rn > ((#{pageNum}-1)*#{amount})
  ]]>
 	</select>
 	<!-- 전체 게시물 수 -->
 	<select id="totalCnt" resultType="int">
-		select count(*) from spring_board where bno > 0
+		select count(*) from
+		spring_board 
+		where 
+		<include refid="criteria"></include>
+        bno > 0
 	</select>
-	
+
 	<!-- 특정 조회 : bno에 해당하는 게시물 가져오기(read) -->
 	<select id="read" resultType="com.spring.domain.BoardVO">
-		select * from spring_board where bno=#{bno}
+		select * from spring_board where
+		bno=#{bno}
 	</select>
+
+
+	<!-- 동적 sql -->
+	<sql id="criteria">
+		<trim prefix="(" suffix=") AND" prefixOverrides="OR">
+			<foreach collection="typeArr" item='type'>
+				<trim prefix="OR">
+					<choose>
+						<when test="type=='T'.toString()">
+							title like '%' || #{keyword} || '%'
+						</when>
+						<when test="type=='C'.toString()">
+							content like '%' || #{keyword} || '%'
+						</when>
+						<when test="type=='W'.toString()">
+							writer like '%' || #{keyword} || '%'
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
+
+
 </mapper>

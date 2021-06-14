@@ -44,10 +44,13 @@
             </div>
 			<%-- remove와 list를 위한 폼--%>
 <form action="" id="operForm" method="post">
-	<input type="hidden" name="bno" value="${vo.bno}" />
-	<input type="hidden" name="pageNum" value= "${cri.pageNum}"/>
-<input type="hidden" name="amount" value= "${cri.amount}"/>
+ <input type="hidden" name="type" value= "${cri.type}"/> 
+ <input type="hidden" name="keyword" value= "${cri.keyword}"/>
+ <input type="hidden" name="pageNum" value= "${cri.pageNum}"/>
+ <input type="hidden" name="amount" value= "${cri.amount}"/>
+ <input type="hidden" name="bno" value="${vo.bno}" />
 </form>
-			<%-- 스크립트 --%>
-			<script src="/resources/js/modify.js"></script>
+
+<%-- 스크립트 --%>
+<script src="/resources/js/modify.js"></script>
 <%@include file="../includes/footer.jsp" %>       
