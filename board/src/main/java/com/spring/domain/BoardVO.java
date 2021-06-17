@@ -2,14 +2,13 @@ package com.spring.domain;
 
 
 import java.sql.Date;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import oracle.sql.DATE;
-
 
 
 @Getter
@@ -25,4 +24,9 @@ public class BoardVO {
 	private String writer;
 	private Date regdate;
 	private Date updatedate;
+	private int replycnt;
+	
+	//첨부파일 리스트
+	private List<AttachFileDTO> attachList;
+	
 }

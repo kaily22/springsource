@@ -57,12 +57,13 @@
                         <div class="header">
                            <strong class="primary-font">user00</strong>
                            <small class="pull-right text-muted">2021-06-15 14:25</small>
+                           <p>Good job!!</p>
                         </div>
                      </div>
                   </li>
                </ul>
             </div>
-         <div class="panel-footer"></div>
+         <div class="panel-footer"></div><!-- 댓글 페이지 나누기 -->
       </div><!-- panel panel-default close -->
    </div><!-- col-lg-12 close -->
 </div><!-- row close -->
@@ -95,7 +96,7 @@
         <button type="button" class="btn btn-success" id="modalRegisterBtn">등록</button>
         <button type="button" class="btn btn-warning" id="modalModifyBtn">수정</button>
         <button type="button" class="btn btn-danger" id="modalRemoveBtn">삭제</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal">종료</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="modalCloseBtn">종료</button>
       </div>
     </div>
   </div>

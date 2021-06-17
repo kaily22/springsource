@@ -81,13 +81,33 @@ from(
  
  select * from spring_reply where bno=170;
 
+ 
+ --댓글 수 저장 컬럼 추가
+ alter table spring_board add(replycnt number default 0);
+
+ --이미 들어간 댓글 수 삽입
+update SPRING_BOARD 
+set replycnt = (select count(bno) from SPRING_REPLY where SPRING_BOARD.bno = SPRING_REPLY.bno);
+
+select * from spring_board where bno=170;
 
 
 
 
+--파일 첨부 테이블
+create table spring_attach(
+    uuid varchar2(100) not null,
+    uploadPath varchar2(200) not null,
+    fileName varchar2(100) not null,
+    fileType char(1) default 'I',
+    bno number(10,0)
+   );
+   
+   alter table spring_attach add constraint pk_attach primary key(uuid);
+   alter table spring_attach add constraint fk_board_attach foreign key(bno) references spring_board(bno);
+ 
 
-
-
+)
 
 
 
