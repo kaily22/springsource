@@ -2,6 +2,7 @@ package com.spring.service;
 
 import java.util.List;
 
+import com.spring.domain.AttachFileDTO;
 import com.spring.domain.BoardVO;
 import com.spring.domain.Criteria;
 
@@ -13,4 +14,6 @@ public interface BoardService {
 	public List<BoardVO> list(Criteria cri);
 	public BoardVO read(int bno);
 	public int total(Criteria cri);
+	public List<AttachFileDTO> getattachList(int bno);
+	
 }

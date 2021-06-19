@@ -110,6 +110,9 @@ create table spring_attach(
 )
 
 
+select * from spring_attach;
+
+
 
 
 
