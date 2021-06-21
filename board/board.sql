@@ -110,7 +110,12 @@ create table spring_attach(
 )
 
 
-select * from spring_attach;
+
+--어제 날짜
+select * from spring_attach
+where uploadPath = to_char(sysdate-1 , 'yyyy\mm\dd');
+
+
 
 
 

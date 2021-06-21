@@ -6,9 +6,9 @@
     </Console>
   </Appenders>
   <Loggers>
-    <Logger name="com.spring.controller" level="info"/>
-    <Logger name="com.spring.controller" level="debug"/>
-  
+    <Logger name="com.spring.controller" level="info"/>  
+    <Logger name="com.spring.mapper" level="debug"/>
+    <Logger name="com.spring.task" level="info"/>
     
     <Logger name="org.springframework.core" level="info"/>
     <Logger name="org.springframework.beans" level="info"/>
