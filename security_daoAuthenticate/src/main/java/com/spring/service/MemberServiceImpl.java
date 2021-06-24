@@ -29,12 +29,18 @@ public class MemberServiceImpl implements MemberService {
 		//회원 정보 등록
 		boolean result = mapper.register(user)==1;
 		
-		//회원권한 등록
+		//회원권한 등록 -admin의 경우 role_admin, role_user 둘다 권한 부여
 		SpUserAuthority auth = new SpUserAuthority();
 		auth.setUserid(user.getUserid());
-		auth.setAuthority("ROLE_USER");
-			
+		auth.setAuthority("ROLE_ADMIN");
 		mapper.registerAuth(auth);
+
+		
+		auth = new SpUserAuthority();
+		auth.setUserid(user.getUserid());
+		auth.setAuthority("ROLE_USER");
+		mapper.registerAuth(auth);
+		
 		
 		return result;
 	}

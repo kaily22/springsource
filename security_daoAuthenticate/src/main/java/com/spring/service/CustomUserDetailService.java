@@ -6,11 +6,15 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import com.spring.mapper.MemberMapper;
+import com.spring.security.CustomUser;
 import com.spring.security.spUser;
 
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
+
+//userdetailservice : security가 제공하는 service
+
 public class CustomUserDetailService implements UserDetailsService {
 
 	@Autowired
@@ -25,7 +29,8 @@ public class CustomUserDetailService implements UserDetailsService {
 		
 		log.info("인증정보" +spUser);
 		
-		return null;
+		//return null;
+		return new CustomUser(spUser);
 	}
 
 }
