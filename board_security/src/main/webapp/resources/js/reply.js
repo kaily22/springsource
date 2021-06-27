@@ -9,6 +9,9 @@
          $.ajax({
             type:'post',
             url:'/replies/new',
+            beforeSend:function(xhr){
+ 	            xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
+             },
             contentType:'application/json',
             data:JSON.stringify(reply),
             success:function(result){
@@ -35,11 +38,18 @@
          })
       }//getList 종료
       
-      function remove(rno,callback){
+      function remove(rno,replyer,callback){
          
          $.ajax({
             url:'/replies/'+rno, // /replies/3
             type : 'delete',
+            beforeSend:function(xhr){
+ 	            xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
+             },
+            contentType : "application/json",
+            data:JSON.stringify({
+	           replyer:replyer
+             }),
             success:function(result){
                if(callback){
                   callback(result);
@@ -56,6 +66,9 @@
          $.ajax({
             url:'/replies/'+reply.rno, // /replies/3
             type : 'put',
+            beforeSend:function(xhr){
+ 	            xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
+             },
             data : JSON.stringify(reply),
             contentType:'application/json',
             success:function(result){

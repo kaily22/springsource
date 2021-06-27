@@ -10,11 +10,11 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 public class CommonException {
 
-	@ExceptionHandler(Exception.class)
-	public String except() {
-		log.info("Exception 발생... ");
-		
-		return "except/error";
-	}
+//	@ExceptionHandler(Exception.class)
+//	public String except() {
+//		log.info("Exception 발생... ");
+//		
+//		return "except/error";
+//	}
 	
 }

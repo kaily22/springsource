@@ -22,7 +22,7 @@
     placeholder="비밀번호를 입력해 주세요" required>
      <div class="checkbox mb-3">
        <label>
-         <input type="checkbox" value="remember-me">로그인 기억하기
+         <input type="checkbox" name="remember-me">로그인 기억하기
        </label>
      </div>
      <button class="btn btn-lg btn-primary btn-block" type="submit">로그인</button>

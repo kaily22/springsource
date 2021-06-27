@@ -109,6 +109,9 @@ $(function(){
             type:'post',
             processData:false,
             contentType:false,
+            beforeSend:function(xhr){
+	            xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
+             },
             data:formData, //url~data/ : 1번으로 실행 => 서버로 =>'/uploadAjax' & post방식으로 받는 컨트롤러가 응답
             success:function(result){
                console.log(result);

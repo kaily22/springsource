@@ -9,6 +9,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -48,11 +49,14 @@ public class BoardController {
 		model.addAttribute("pageVO", new PageVO(cri, total));
 	}
 
+	@PreAuthorize("isAuthenticated()") //@PreAuthorize("hasAuthority('ROLE_USER')")
 	@GetMapping("/register")
 	public void register() {
 		log.info("새글 등록 폼 요청");
 	}
 	
+	//게시글 등록
+	@PreAuthorize("isAuthenticated()")
 	@PostMapping("/register")
 	public String registerPost(BoardVO vo,RedirectAttributes rttr) {
 		log.info("게시글 등록하기" + vo);
@@ -85,6 +89,8 @@ public class BoardController {
 
 	// /board/modify? bno=7 -> modify.jsp에 한번 더 뿌려줌
 	// modify+post 수정한 후 list
+	
+	@PreAuthorize("principal.username==#vo.writer")
 	@PostMapping("/modify")
 	public String modify(BoardVO vo, Criteria cri, RedirectAttributes rttr) {
 		log.info("게시판 수정하기 "+vo+"페이지 나누기 " +cri);
@@ -109,8 +115,9 @@ public class BoardController {
 	}
 
 	//게시글 삭제
+	@PreAuthorize("principal.username==#writer")
 	@PostMapping("/remove")
-	public String remove(int bno, Criteria cri, RedirectAttributes rttr) {
+	public String remove(int bno, String writer, Criteria cri, RedirectAttributes rttr) {
 		log.info("게시글 삭제하기 " + bno);
 		service.delete(bno);
 
@@ -125,7 +132,7 @@ public class BoardController {
 		
 		//2) 폴더 파일 삭제
 		deleteFiles(attachList);
-		rttr.addFlashAttribute("result","성ㅇ공");
+		rttr.addFlashAttribute("result","성공");
 		}
 		
 		rttr.addAttribute("type", cri.getType());

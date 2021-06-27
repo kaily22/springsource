@@ -12,25 +12,23 @@ import com.spring.mapper.MemberMapper;
 
 import lombok.extern.log4j.Log4j2;
 
+
 @Log4j2
-
-//userdetailservice : security가 제공하는 service
-
 public class CustomUserDetailService implements UserDetailsService {
 
 	@Autowired
-	private MemberMapper mapper;
-
+	private MemberMapper mapper;	
+	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		
-		log.info("userid : " +username);
+		// username => userid 값
+		log.info("userid : "+username);
 		
 		MemberVO member = mapper.read(username);
 		
-		log.info("인증정보" +member);
+		log.info("인증정보 "+member);	
 		
-		//return null;
+		
 		return new CustomUser(member);
 	}
 

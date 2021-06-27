@@ -15,6 +15,8 @@ public interface ReplyMapper {
 	public int update(ReplyVO vo);
 	public int delete(int rno);
 	
+	public int deleteAll(int bno);
+	
 	public int getCountByBno(int bno);
 	public List<ReplyVO> list(@Param("cri") Criteria cri, @Param("bno") int bno);
 	

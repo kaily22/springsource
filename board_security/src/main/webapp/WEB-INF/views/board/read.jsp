@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <link rel="stylesheet" href="/resources/dist/css/attach.css" />
 <%@include file="../includes/header.jsp" %>
             <div class="row">
@@ -34,7 +35,16 @@
                                <label>Writer</label>
                                <input class="form-control" name="writer" readonly="readonly" value="${vo.writer}">                            
                             </div>  
-                            <button type="button" class="btn btn-default">Modify</button>              
+                            
+                            <!-- 로그인한 사용자와 작성자가 동일할 때 modify 버튼 보여주기 -->
+                            <!-- principal을 info 라는 이름으로 대신 쓴다 -->
+                            <sec:authentication property="principal" var="info"/>
+                            <sec:authorize access="isAuthenticated()"><%--로그인 여부 확인--%>
+                             <c:if test="${info.username==vo.writer}"><!--로그인한 사용자와 작성자가 동일여부 확인  -->
+                            <button type="button" class="btn btn-default">Modify</button> 
+                            </c:if>
+                            </sec:authorize>             
+                            
                             <button type="button" class="btn btn-info">List</button>                   
                          </form>
                       </div>
@@ -66,7 +76,11 @@
          <div class="panel-heading">
             <i class="fa fa-comments fa-fw"></i>
             Reply
+            
+             <sec:authorize access= "isAuthenticated()"> <!-- 로그인 여부 확인 -->
             <button id="addReplyBtn" class="btn btn-primary btn-xs pull-right">New Reply</button>
+            </sec:authorize>
+            
          </div>
             <div class="panel-body">
                <ul class="chat">
@@ -131,6 +145,16 @@
 </form>     
 <script>   
    let bno=${vo.bno};
+   //현재 로그인 사용자 가져오기
+   var replyer = null;
+   <sec:authorize access="isAuthenticated()">
+   replyer = '<sec:authentication property="principal.username"/>';
+ </sec:authorize> 
+ 
+ var csrfHeaderName = "${_csrf.headerName}";
+ var csrfTokenValue = "${_csrf.token}";
+ 
+ 
 </script>
 <script src="/resources/js/read.js"></script>
 <script src="/resources/js/reply.js"></script>

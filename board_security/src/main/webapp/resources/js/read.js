@@ -107,11 +107,15 @@ $(".uploadResult").on("click","li",function(){
    var modalRemoveBtn = $("#modalRemoveBtn");
    
 
+
    $("#addReplyBtn").click(function() {
       
       
    //input안에 들어있는 value 제거
      modal.find("input").val("");
+
+   //로그인 사용자 댓글 작성자 란에 아이디 보여주기
+    modalReplyer.val(replyer);
    
    //modalReply.val("");
    //modalReplyer.val("");
@@ -233,12 +237,31 @@ $(".uploadResult").on("click","li",function(){
    
    //댓글 삭제
    $("#modalRemoveBtn").click(function(){
+	
+	
+	//로그인 여부 확인
+	if(!replyer) {
+	  alert("로그인 한 후 삭제가 가능합니다.");
+      modal.modal("hide");
+      return;	
+	}
+	
+	//현재 모달창에 잇는 작성자와 로그인 사용자가 같은지 확인
+	
+	//현재 모달창 작성자 가져오기
+	var oriReplyer = modalReplyer.val();
+	//비교
+	if(oriReplyer!=replyer){
+		alert("자신만의 댓글만 삭제가 가능합니다.");
+		modal.modal("hide");
+		return;
+	}
       
      //rno 가져오기
      //this는 불가 
      var rno = modal.data("rno");
 
-      replyService.remove(rno,function(result){
+      replyService.remove(rno,oriReplyer,function(result){
          //alert(result);
          //모랄 창 닫기
         modal.modal("hide"); 
@@ -248,14 +271,28 @@ $(".uploadResult").on("click","li",function(){
       
    })//#modalRemoveBtn
    
-   
-   
    //댓글 수정
    $("#modalModifyBtn").click(function(){
+	
+	
+	//로그인 여부 확인
+	if(!replyer){
+		alert("로그인 한 후 수정이 가능합니다");
+		modal.modal("hide");
+		return;
+	}
+	
+	var oriReplyer = modalReplyer.val();
+	if(oriReplyer!=replyer){
+		alert("자신만의 댓글만 수정이 가능합니다.");
+		modal.modal("hide");
+		return;
+	}
    
    var reply={
       rno: modal.data("rno"),
-      reply: modalReply.val()
+      reply: modalReply.val(),
+      replyer: modalReplyer.val()
    }
       replyService.update(reply,function(result){
 //         if(result){
@@ -269,14 +306,13 @@ $(".uploadResult").on("click","li",function(){
    })//#modalModifyBtn
    
    
-   
    //이벤트 위임 : li 태그는 나중에 생기는 요소이기 때문에 ul먼저 이벤트를 건 후
    //         li에 넘겨주는 방식
    $(replyUl).on("click","li",function(){
       //현재 클릭된 li 요소의 rno 가져오기
       var rno= $(this).data("rno");
       
-      
+  
       //댓글 가져오기
       replyService.get(rno,function(data){
       console.log(data)

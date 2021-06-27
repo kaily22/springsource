@@ -11,6 +11,7 @@ import com.spring.domain.BoardVO;
 import com.spring.domain.Criteria;
 import com.spring.mapper.BoardAttachMapper;
 import com.spring.mapper.BoardMapper;
+import com.spring.mapper.ReplyMapper;
 
 
 @Service
@@ -22,6 +23,8 @@ public class BoardServiceImpl implements BoardService {
 	@Autowired
 	private BoardAttachMapper attachMapper;
 	
+	@Autowired
+	private ReplyMapper replyMapper;
 	
 	@Transactional
 	@Override
@@ -43,8 +46,13 @@ public class BoardServiceImpl implements BoardService {
 		return result;
 	}
 
+	@Transactional
 	@Override
 	public boolean delete(int bno) {
+		
+		//댓글 삭제
+		replyMapper.deleteAll(bno);
+		
 		//첨부파일 삭제
 		attachMapper.delete(bno);
 		//게시글 삭제
@@ -61,6 +69,11 @@ public class BoardServiceImpl implements BoardService {
 		
 		//게시글 수정
 		boolean modifyResult = mapper.update(vo) > 0? true: false;
+		
+		if(vo.getAttachList() == null) {
+			return modifyResult;
+		}
+		
 		
 		//첨부파일 삽입
 		if(modifyResult && vo.getAttachList().size() > 0) {

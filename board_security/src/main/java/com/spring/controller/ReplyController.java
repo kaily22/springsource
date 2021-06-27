@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,6 +32,7 @@ public class ReplyController {
    private ReplyService service;
    
    //새 댓글 등록
+   @PreAuthorize("isAuthenticated()")
    @PostMapping("/new")
    public ResponseEntity<String> create(@RequestBody ReplyVO reply){
       log.info("댓글 삽입 요청"+reply);
@@ -46,6 +48,8 @@ public class ReplyController {
       return new ResponseEntity<>(service.replyGet(rno),HttpStatus.OK);
          
    }
+   
+   @PreAuthorize("principal.username == #reply.replyer")
    @PutMapping("/{rno}")//주소줄로 따라와서 rno 안담김
    public ResponseEntity<String> update(@PathVariable("rno") int rno,@RequestBody ReplyVO reply){
       log.info("댓글 수정"+rno+" 수정 내용 "+reply);
@@ -56,8 +60,9 @@ public class ReplyController {
          new ResponseEntity<String>("fail", HttpStatus.INTERNAL_SERVER_ERROR);
    }
    
+   @PreAuthorize("principal.username == #vo.replyer")
    @DeleteMapping("/{rno}")
-   public ResponseEntity<String> delete(@PathVariable("rno") int rno){
+   public ResponseEntity<String> delete(@PathVariable("rno") int rno, @RequestBody ReplyVO vo){
 	   log.info("댓글 삭제");
 	   
 	   return service.replyDelete(rno)?new ResponseEntity<String>("success", HttpStatus.OK):

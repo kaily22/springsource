@@ -239,7 +239,7 @@
                         <!-- 인증된 정보가 있으면 logout 보여주기 -->
                         <sec:authorize access="isAuthenticated()">
                         <li>
-                           <a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout </a>
+                           <a href="#" id="logout"><i class="fa fa-sign-out fa-fw"></i> Logout </a>
                         </li>
                         </sec:authorize>
                         <sec:authorize access="!isAuthenticated()">
@@ -362,5 +362,26 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
+        <%--로그아웃을 클릭하면 전송할 폼 --%>
+        <form action="/logout" method="post" id="logoutForm">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+        </form>
         <div id="page-wrapper">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+        $(function() {
+        	$("#logout").click(function(e){
+        		//a 태그 동작 막기
+        		e.preventDefault();
+        		
+        		//form을 보낼때 csrf 값 포함해서 전송
+        		$("#logoutForm").submit();
+        	})
+        	
+        })
+        </script>
+        
+        
+        
+        
+        
