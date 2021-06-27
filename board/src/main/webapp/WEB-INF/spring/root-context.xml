@@ -20,6 +20,9 @@
 	<context:component-scan base-package="com.spring.task" />
 	<task:annotation-driven/>
 	
+	<!--  @ControllerAdvice 활성화 -->
+	<context:component-scan base-package="com.spring.except"/>
+	
 	<mybatis-spring:scan
 		base-package="com.spring.mapper" />
 
