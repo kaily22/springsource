@@ -36,6 +36,12 @@ $(function(){
 		alert(error);
 	}
 })
+$(function(){
+	let error = '${error}';
+	if(error){
+		alert(error);
+	}
+})
 </script>
 </body>
 </html>

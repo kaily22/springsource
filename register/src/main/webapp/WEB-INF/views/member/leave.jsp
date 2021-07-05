@@ -31,7 +31,7 @@
 			    <button type="button" class="btn btn-secondary" id="leavecancel">취소</button>		
 			</div>
 		</div>
-	</div>		
+	</div>	
 </form>
 </body>
 </html>

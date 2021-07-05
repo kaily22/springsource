@@ -14,7 +14,7 @@ public class SampleServiceImpl implements SampleService {
 	
 	@Autowired
 	private SampleMapper1 mapper1;
-	@Autowired
+	@Autowired 
 	private SampleMapper2 mapper2;
 	
 	@Override

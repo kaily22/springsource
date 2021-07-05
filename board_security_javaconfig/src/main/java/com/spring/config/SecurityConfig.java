@@ -17,6 +17,8 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
+import org.springframework.security.web.csrf.CsrfFilter;
+import org.springframework.web.filter.CharacterEncodingFilter;
 
 import com.spring.handler.CustomAccessDeniedHandler;
 import com.spring.handler.CustomLoginSuccessHandler;
@@ -62,7 +64,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		//모든 사람이 접근 할 수 있는 url 지정	
+
+		//모든 사람이 접근 할 수 있는 url 지정
+		CharacterEncodingFilter filter = new CharacterEncodingFilter();
+		filter.setEncoding("utf-8");
+		filter.setForceEncoding(true);
+		http.addFilterBefore(filter, CsrfFilter.class);
+				
 		http.authorizeRequests()
 			.antMatchers("/login")
 			.permitAll();

@@ -90,14 +90,14 @@ public class MemberController {
 	}
 
 	@PostMapping("/leave")
-	public String leavePost(String userid, @RequestParam("current_password") String password, HttpSession session) {
+	public String leavePost(String userid, @RequestParam("current_password") String password, HttpSession session, RedirectAttributes rttr) {
 		log.info("회원 탈퇴 정보 : " + userid + " " + password);
 
 		if (service.leave(userid, password)) {
 			session.invalidate();
 			return "redirect:/";
 		} else {
-			// rttr.addFlashAttribute("check" ,"비밀번호를 확인해주세요");
+		    rttr.addFlashAttribute("error" ,"비밀번호를 확인해주세요");
 			return "/member/leave";
 
 		}

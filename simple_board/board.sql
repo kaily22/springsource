@@ -10,3 +10,5 @@ create board spring_board(
 
 
 select * from spring_board;
+
+
