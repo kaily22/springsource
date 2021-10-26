@@ -261,7 +261,7 @@ $(".uploadResult").on("click","li",function(){
 //         if(result){
 //            alert(result);
 //         }
-          
+//          
            //모달 창 닫기
            modal.modal("hide");
            showList(pageNum);
