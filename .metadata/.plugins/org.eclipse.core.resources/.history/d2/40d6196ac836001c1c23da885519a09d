@@ -1,0 +1,20 @@
+package com.company.view.controller;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.company.view.user.LoginController;
+
+public class HandlerMapping {
+	private Map<String, Controller> mappings;
+	
+	//积己磊
+	public HandlerMapping() {
+		//磊丰备炼 => HashMap 按眉 积己
+		mappings = new HashMap<String, Controller>();
+		
+		mappings.put("/login.do", new LoginController());
+		mappings.put("/logout.do", new LoginController());
+		
+	}
+}

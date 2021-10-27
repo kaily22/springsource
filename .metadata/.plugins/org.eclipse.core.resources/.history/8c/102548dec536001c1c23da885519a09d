@@ -1,0 +1,7 @@
+package com.company.view.controller;
+
+import java.util.Map;
+
+public class HandlerMapping {
+	private Map<String, Controller> mapping;
+}

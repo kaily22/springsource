@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=java_basic/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.spring.poly{TV.java[TV" modifiers="513" timestamp="1622624645880"/>
+    <typeInfo handle="=spring_basic/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.spring.basic{MessageBean.java[MessageBean" modifiers="513" timestamp="1622686394400"/>
+    <typeInfo handle="=simple_board/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.spring.service{BoardService.java[BoardService" modifiers="513" timestamp="1622706616000"/>
+    <typeInfo handle="=simple_book/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.spring.service{BookService.java[BookService" modifiers="513" timestamp="1622767431434"/>
+    <typeInfo handle="=simple_member/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.spring.service{MemberService.java[MemberService" modifiers="513" timestamp="1622797970182"/>
+    <typeInfo handle="=aop_factorial/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.spring.factorial{Calculator.java[Calculator" modifiers="513" timestamp="1623034049939"/>
+    <typeInfo handle="=transaction/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.spring.service{SampleService.java[SampleService" modifiers="513" timestamp="1623034875764"/>
+    <typeInfo handle="=transaction/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.spring.mapper{SampleMapper1.java[SampleMapper1" modifiers="513" timestamp="1623036420087"/>
+    <typeInfo handle="=register/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.spring.service{MemberService.java[MemberService" modifiers="513" timestamp="1623230271758"/>
+    <typeInfo handle="=book/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.spring.service{BookService.java[BookService" modifiers="513" timestamp="1623291203382"/>
+    <typeInfo handle="=board/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.spring.service{ReplyService.java[ReplyService" modifiers="513" timestamp="1623820040839"/>
+    <typeInfo handle="=security_daoAuthenticate/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.spring.service{MemberService.java[MemberService" modifiers="513" timestamp="1624435838548"/>
+</typeInfoHistroy>

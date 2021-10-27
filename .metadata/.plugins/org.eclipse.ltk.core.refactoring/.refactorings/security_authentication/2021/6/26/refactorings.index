@@ -1,0 +1,18 @@
+1624414566622	Delete element
+1624416012714	Rename resource 'AdminPage.jsp'
+1624416018287	Rename resource 'UserPage.jsp'
+1624416022864	Rename resource 'Student.jsp'
+1624416090131	Delete element
+1624416196309	Rename type 'HomeController'
+1624416848933	Rename package 'Student'
+1624416853884	Rename package 'com.spring.Student'
+1624416857730	Delete element
+1624417383392	Delete element
+1624419349021	Copy compilation unit
+1624428833648	Copy package
+1624428853642	Rename type 'Student'
+1624428859168	Rename type 'StudentManager'
+1624428867412	Rename type 'StudentAuthenticationToken'
+1624428949746	Rename package 'com.spring.student'
+1624428959041	Rename package 'com.spring.teacher'
+1624428962294	Rename package 'com.spring.teacher2'

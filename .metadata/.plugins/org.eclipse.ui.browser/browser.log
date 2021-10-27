@@ -1,0 +1,26 @@
+
+6월 08, 2021 15:11:51.354 NEW SESSION
+6월 08, 2021 15:11:51.355 [15120:5644:0608/151151.348:ERROR:device_event_log_impl.cc(214)] [15:11:51.348] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 08, 2021 16:20:15.894 [15120:5644:0608/162015.894:ERROR:fallback_task_provider.cc(119)] Every renderer should have at least one task provided by a primary task provider. If a fallback task is shown, it is a bug. Please file a new bug and tag it as a dependency of crbug.com/739782.
+6월 08, 2021 17:43:04.608 [15120:5644:0608/174304.607:ERROR:fallback_task_provider.cc(119)] Every renderer should have at least one task provided by a primary task provider. If a fallback task is shown, it is a bug. Please file a new bug and tag it as a dependency of crbug.com/739782.
+6월 08, 2021 17:52:39.490 [15120:5644:0608/175239.490:ERROR:fallback_task_provider.cc(119)] Every renderer should have at least one task provided by a primary task provider. If a fallback task is shown, it is a bug. Please file a new bug and tag it as a dependency of crbug.com/739782.
+6월 08, 2021 17:52:52.217 [15120:5644:0608/175252.217:ERROR:fallback_task_provider.cc(119)] Every renderer should have at least one task provided by a primary task provider. If a fallback task is shown, it is a bug. Please file a new bug and tag it as a dependency of crbug.com/739782.
+6월 08, 2021 17:52:52.223 [15120:5644:0608/175252.223:ERROR:fallback_task_provider.cc(119)] Every renderer should have at least one task provided by a primary task provider. If a fallback task is shown, it is a bug. Please file a new bug and tag it as a dependency of crbug.com/739782.
+
+6월 11, 2021 09:35:55.990 NEW SESSION
+6월 11, 2021 09:35:55.991 [14304:768:0611/093555.987:ERROR:device_event_log_impl.cc(214)] [09:35:55.987] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 11, 2021 09:35:55.996 [14304:768:0611/093555.996:ERROR:device_event_log_impl.cc(214)] [09:35:55.996] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 11, 2021 09:40:55.658 [17188:13528:0611/094055.656:ERROR:device_event_log_impl.cc(214)] [09:40:55.656] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 11, 2021 09:41:37.577 [5336:10484:0611/094137.576:ERROR:device_event_log_impl.cc(214)] [09:41:37.576] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 11, 2021 09:41:37.582 [5336:10484:0611/094137.582:ERROR:device_event_log_impl.cc(214)] [09:41:37.582] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 11, 2021 09:43:56.352 [10160:16404:0611/094356.352:ERROR:device_event_log_impl.cc(214)] [09:43:56.351] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 11, 2021 09:43:56.355 [10160:16404:0611/094356.354:ERROR:device_event_log_impl.cc(214)] [09:43:56.354] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 11, 2021 09:45:31.664 [8348:14504:0611/094531.663:ERROR:device_event_log_impl.cc(214)] [09:45:31.663] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 11, 2021 10:00:30.824 [8868:11556:0611/100030.824:ERROR:device_event_log_impl.cc(214)] [10:00:30.823] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 11, 2021 10:09:56.971 [8868:16904:0611/100956.971:ERROR:mcs_client.cc(755)] Received close command, resetting connection.
+
+6월 17, 2021 09:35:54.259 NEW SESSION
+6월 17, 2021 09:35:54.259 [3392:12308:0617/093554.252:ERROR:device_event_log_impl.cc(214)] [09:35:54.252] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 17, 2021 09:56:47.457 [11392:9644:0617/095647.457:ERROR:device_event_log_impl.cc(214)] [09:56:47.457] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 17, 2021 12:07:47.748 [11392:9644:0617/120747.748:ERROR:fallback_task_provider.cc(119)] Every renderer should have at least one task provided by a primary task provider. If a fallback task is shown, it is a bug. Please file a new bug and tag it as a dependency of crbug.com/739782.
+6월 17, 2021 13:11:47.839 [11392:9644:0617/131147.838:ERROR:fallback_task_provider.cc(119)] Every renderer should have at least one task provided by a primary task provider. If a fallback task is shown, it is a bug. Please file a new bug and tag it as a dependency of crbug.com/739782.

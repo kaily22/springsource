@@ -1,0 +1,48 @@
+package com.company.view.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class DispatcherServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+   
+	//객체 참조변수 선언(멤버변수)
+	private HandlerMapping handlerMapping;
+	private ViewResolver viewResolver;
+	
+	//수동으로 필요 메소드 오버라이드 시키는 방법 => 먼저 i 입력하고 ctrl+space
+	@Override
+	public void init() throws ServletException {
+		
+		//서블릿 컨테이너가 init() 호출 
+		handlerMapping = new HandlerMapping();
+		viewResolver = new ViewResolver();
+		viewResolver.setPrefix("./");
+		viewResolver.setSuffix(".jsp");
+	}
+	
+    public DispatcherServlet() {
+        super();
+    }
+
+		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+		{
+			
+			request.setCharacterEncoding("UTF-8");
+			process(request,response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		request.setCharacterEncoding("UTF-8");
+		process(request,response);
+}
+	}
+	private void process(HttpServlet request, HttpServletResponse response) throws IOException {
+		
+	}
+
+}

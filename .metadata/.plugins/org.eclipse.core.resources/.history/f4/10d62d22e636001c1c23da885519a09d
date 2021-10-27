@@ -1,0 +1,28 @@
+package com.company.view.board;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.company.view.controller.Controller;
+
+public class GetBoardListController implements Controller{
+
+	@Override
+	public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
+		
+		System.out.println("전체 게시글 검색 처리");
+		
+		String searchField="";
+		String searchText = "";
+		
+		if(request.getParameter("searchCondition") != "" && request.getParameter("searchKeyword") != " ") {
+
+			return null;
+			
+		}
+		
+		
+		
+	}
+
+}

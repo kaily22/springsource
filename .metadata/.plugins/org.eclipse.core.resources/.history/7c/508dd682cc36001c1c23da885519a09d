@@ -1,0 +1,6 @@
+package com.company.view.controller;
+
+public class ViewResolver {
+	//필드 선언
+	public String prefix;
+}

@@ -1,0 +1,23 @@
+package com.company.view.user;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.company.view.controller.Controller;
+
+public class LoginController implements Controller{
+	
+	//재정의
+	@Override
+	public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
+	
+		
+		//1. 사용자 입력 정보 추출
+		String id=request.getParameter("id");
+		String password = request.getParameter("password");
+		
+		
+		return null;
+	}
+	
+}
