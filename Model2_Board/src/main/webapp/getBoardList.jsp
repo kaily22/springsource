@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" errorPage = "error.jsp" %>
-    
-<%@ page import = "com.company.Model2.Board.board.BoardDO"%>
-<%@ page import = "com.company.Model2.Board.board.BoardDAO"%>
+<%@ page import = "com.company.Model2.Board.board.BoardDAO" %>
+<%@ page import = "com.company.Model2.Board.board.BoardDO" %>
 <%@ page import = "java.util.List" %>
 
 <% 
