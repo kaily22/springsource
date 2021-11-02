@@ -11,11 +11,12 @@
 </aop-project>
 <aop-project name="book"/>
 <aop-project name="register"/>
+<aop-project name="Spring_Annotation_Board"/>
 <aop-project name="rest"/>
 <aop-project name="book_rest"/>
-<aop-project name="security_authentication"/>
-<aop-project name="mybatis"/>
 <aop-project name="board_security_javaconfig"/>
+<aop-project name="mybatis"/>
+<aop-project name="security_authentication"/>
 <aop-project name="security_daoAuthenticate">
 <aspect-definition advice-class-name="org.springframework.transaction.interceptor.TransactionInterceptor" advice-method-name="invoke" advice-method-parameter-types="org.aopalliance.intercept.MethodInvocation" advice-type="AROUND" aspect-end-line-number="46" aspect-name="org.springframework.transaction.interceptor.TransactionInterceptor#security_daoAuthenticate#src/main/webapp/WEB-INF/spring/root-context.xml#46" aspect-start-line-number="46" factory-id="org.springframework.ide.eclipse.aop.core.javaAdvisorDefinitionElementFactory" file="/security_daoAuthenticate/src/main/webapp/WEB-INF/spring/root-context.xml" pointcut-expression="(@within(org.springframework.transaction.annotation.Transactional) || @annotation(org.springframework.transaction.annotation.Transactional)) &amp;&amp; execution(* *..*(..))" proxy-target-class="false">
 <aop-reference advice-type="AROUND" bean="1:BeansModel|2:security_daoAuthenticate|3:src/main/webapp/WEB-INF/spring/root-context.xml|7:beans:14|8:memberServiceImpl:14" bean-file="/security_daoAuthenticate/src/main/webapp/WEB-INF/spring/root-context.xml" bean-start-line="14" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/security_daoAuthenticate/src/main/webapp/WEB-INF/spring/root-context.xml" source="=board/C:\/Users\/seunghyun\/.m2\/repository\/org\/springframework\/spring-tx\/5.3.7\/spring-tx-5.3.7.jar=/maven.pomderived=/true=/=/org.eclipse.jst.component.dependency=/\/WEB-INF\/lib=/=/maven.pomderived=/true=/=/org.eclipse.jst.component.archivename=/spring-tx-5.3.7.jar=/=/maven.groupId=/org.springframework=/=/maven.artifactId=/spring-tx=/=/maven.version=/5.3.7=/=/maven.scope=/compile=/&lt;org.springframework.transaction.interceptor(TransactionInterceptor.class[TransactionInterceptor~invoke~Lorg.aopalliance.intercept.MethodInvocation;" source-start-line="-1" target="=security_daoAuthenticate/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.spring.service{MemberServiceImpl.java[MemberServiceImpl~register~QspUser;" target-start-line="25"/>

@@ -1,9 +1,9 @@
-<%@page import="com.company.Spring_MVC_Board.board.BoardDO"%>
+<%@page import="com.company.MVC_FW_Board.board.BoardDO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
 
-<%@ page import = "com.company.Spring_MVC_Board.*" %>
+<%@ page import = "com.company.MVC_FW_Board.*" %>
 <%@ page import = "java.util.List" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
