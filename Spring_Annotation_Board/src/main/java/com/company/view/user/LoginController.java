@@ -10,7 +10,6 @@ import com.company.annotation.user.UserDO;
 
 
 @Controller 
-
 public class LoginController { //Controller 클래스는 POJO 클래스로 구현한다!!
 	
 	//스프링 어노테이션 기반
